@@ -1,0 +1,41 @@
+
+
+
+<% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= current_user.email %>
+  </p>
+
+  <p>
+    <strong>First name:</strong>
+    <%= current_user.first_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= current_user.last_name %>
+  </p>
+
+  <p>
+     <strong>Age:</strong>
+     <%= current_user.age %>
+  </p>
+
+  <p>
+    <strong>Roll no:</strong>
+    <%= current_user.roll_no %>
+  </p>
+  <%= link_to "Edit",edit_user_path(current_user) %>
+  
+  
+  <%= link_to "Log Out", logout_path %>
+<% else %>
+  <h1>Sign up  or login</h1>
+  <%= link_to "SIGN UP", signup_path %> or 
+  <%= link_to "LOG IN", login_path %> or
+  <%= link_to "ADMIN",users_path %>
+<% end %>
